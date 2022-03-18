@@ -1,133 +1,523 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Caveat+Brush&di
-splay=swap" rel="stylesheet">
-<style>
-* {
- box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    --color-violet: #8b00ff;
+    --color-darkpink: #cb997e;
+    --color-green: #5FB079;
+    --bcg: #6600cc;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-blue: #B2D5DE;
+    --color-dblue: #0000ff;
+
+
+    background-color: var(--bcg);
+    margin: 0;
 }
-.row {
- display: flex;
+
+h2{
+    margin: 0;
 }
-.column {
- flex: 50%;
- padding: 10px;
- height: 30%; 
+
+p{
+    margin: 0;
 }
- body {
-background: -webkit-gradient(linear, 0 0, 0 100%, from(#6600FF), to(#08E8DE));
- }
- h1 {
- font-family: 'Bangers', cursive;
- }
- h2 {
- font-family: 'Carter One', cursive;
-   color: #fff;
- }
-  p, figcaption {
- font-family: 'Caveat Brush', cursive;
-   color: #fff;
- }
-  button {font-family: 'Caveat Brush', cursive;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#6600FF), to(#08E8DE));
-  border-radius:  5px;}
- .block {
-   flex: 50%;
-   padding:10px;
- }
-</style>
+
+h3{
+    margin: 0;
+    text-align: left;
+}
+
+.logo img{
+    width: 120px;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: var(--color-violet);
+}
+
+.menu{
+    display: flex;
+    padding: 20px 10px 10px 10px;
+}
+
+.logo{    
+    padding-right: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.nav{
+    width: 100%;
+    display: flex; 
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.nav_search{
+    display: flex;
+    justify-content: space-evenly;
+    height: 30%; 
+}
+
+.search{
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn{
+    width: 15%;
+    min-width: 50px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.profile{
+    background-color:  var(--color-white);
+    border-radius: 50px;
+    width: 30px;
+}
+
+.nav_kat{
+    display: flex;
+}
+
+.nav_ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.nav_link{
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 10px;
+    color: var(--color-black);
+    background-color: var(--color-blue);
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.ul_img{
+    padding: 10px 0px 10px 20px;
+    width: 35px;
+}
+
+.main{
+    margin-top: 15px;
+}
+
+.color{
+    position: relative;
+    background-color: var(--color-dblue);
+    padding: 15px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.descr{
+    color: var(--color-white);
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 15px;
+
+}
+
+.main_items{
+    width: 100%;
+}
+
+.main_item1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.item_text{
+    font-size: 26px;
+}
+
+.item_text2{
+    font-size: 26px;
+    text-align: right;
+}
+
+.strelka{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* padding: 0px 15px; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strelka img{
+    margin: 0px 15px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 30px;
+}
+
+.category{
+    display: grid;
+    grid-template: 1fr / 240px 1fr;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+ .choice{
+    background-color: var(--color-pink);
+    padding: 15px 15px 15px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+.choice_ul{
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.choice_ul li{
+    background-color: var(--color-darkpink);
+    margin-bottom: 5px;
+    padding: 4px 5px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+.products{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+
+.product_item{
+    background-color: var(--color-darkpink);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.product_item img{
+    border-radius: 10px;
+    background-color: var(--bcg);
+}
+
+.product_item p{
+    text-align: center;
+}
+
+.name{
+    font-size: 20px;
+}
+
+.button{
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-green);
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.delivery h3{
+    text-align: center;
+    font-size: 36px;
+}
+
+.delivery{
+    margin-top: 8px;
+    margin-bottom: 15px;
+    background-color: var(--color-gray);
+    padding: 15px 0px 20px 0px;
+}
+
+.del_types{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    gap: 20px;
+}
+
+
+.type h4{
+    text-align: center;
+    background-color: var(--color-blue);
+    border-radius: 10px;
+    padding: 5px 0px;
+    font-size: 24px;
+}
+
+.type p{
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.footer{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.footer h3{
+    padding: 10px 0px 10px 65px;
+}
+
+.foo_items{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    margin-top: 10px;
+
+
+}
+
+.foo_item{
+    background-color: var(--color-pink);
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.foo_item p{
+    font-size: 18px;
+}
+
+.foo_item a{
+    color: var(--color-black);
+}
+
+.foo_img{
+    display: flex;
+}
+
+.foo_img img{
+    margin-right: 15px;
+    margin-top: 10px;
+    border-radius: 50%;   	
+    outline: var(--color-black) solid 2px;
+    width: 30px;
+}
+
+@media (max-width: 900px) {
+    .sidebar{
+        display: none;
+    }
+    .category{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .foo_items{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 750px) {
+    .nav_ul{
+        display: none;
+    }
+    .nav{
+        display: block;
+    }
+    .del_types{
+        display: block;
+        padding: 0px 10px;
+    }
+    .btn{
+        font-size: 12px;
+    }
+}
+    </style>
+    <title>Document</title>
 </head>
-<h1>Team Nigma fan page</h1>
-<div class="row">
- <div class="column">
- <img
-src="https://pbs.twimg.com/profile_images/1439862401051017222/r5FLRxYn_400x400.jpg"
-width="200" height="200" />
- </div>
- <div class="column">
-   <button class="new">
-      Login
-    </button>
-   <button>
-      Register
-    </button>
- <h2>About</h2>
- <p>Team Nigma is a European esports organization founded by former Team Liquid members and
-four out of five of the Champions of The International 2017. After finishing 2nd at The International
-2019, captain KuroKy announced the team's departure from Team Liquid with the idea of forming their
-own organization.
- </p>
- <h2>
- Team
- </h2>
- <p>
- 1.Igor "iLTW" Filatov, Russia <br>
- 2.Amer "Miracle-" Al-Barkawi, Jordan <br>
- 3.Ivan "MinD_ContRoL" Ivanov, Bulgaria <br>
- 4.Maroun "GH" Merhej, Lebanon <br>
- 5.Kuro "KuroKy" Salehi Takhasomi (Captain), Germany
- 2(inactive). Aliwi "W33" Omar, Romania
- </p>
- </div>
-</div>
-<div class="block">
- <h2>
- Achievements
- </h2>
- <p>
- Tier 1, WePlay Animajor, Place: 5-6th, Prize: $25,000 <br>
- Tier 2, DreamLeague Season 15 DPC Western Europe Upper Division, Place: 3rd, Prize: $27,000 <br>
- Tier 2, DreamLeague Season 14 DPC EU Upper Division, Place: 3rd, Prize: $27,000 <br>
- Tier 1, EPIC League Season 2 Division 1, Place: 7-8th, Prize: $25,000 <br>
- Tier 1, OMEGA League: Europe Immortal Division, Place: 3rd, Prize: $60,000 <br>
- Tier 2, BEYOND EPIC: Europe/CIS, Place: 2nd, Prize: $35,000 <br>
- Tier 2, BLAST Bounty Hunt, Place: 3rd, Prize: $18,090 <br>
- Tier 2, WePlay! Dota 2 Tug of War: Mad Moon, Place: 1st, Prize: $130,000 <br>
- Tier 1, DreamLeague Season 13, Place: 9-12th, Prize: $25,000 <br>
- Tier 2, WePlay! Bukovel Minor 2020, Place: 1st, Prize: $72,000 <br>
- </p>
- <h2>
- Gallery
- </h2>
- <figure>
- <img
-src="https://pbs.twimg.com/profile_images/1439862401051017222/r5FLRxYn_400x400.jpg"
-width="200" height="200" />
- <figcaption>Logo</figcaption>
- <img src="https://escorenews.com/media/news/n4387.jpeg" width="300" height="200" />
- <figcaption>Nigma wins WePlay! Dota 2 Tug of War: Mad Moon </figcaption>
- <img src="https://dartfrog.gg/wp-content/uploads/2019/12/Dotadetail-Feat.jpg" width="300"
-height="200" />
- <figcaption>Announce of Nigma </figcaption>
- <img src="https://cdn.oneesports.gg/cdn-data/2021/06/Dota2_NigmaAdvancesToWePlayAniMajorGroupStage_1-1024x576.jpg" width="300"
-height="200" />
- <figcaption>Nigma announce iLTW on Animajor </figcaption>
- </figure>
-  <h2>
-    Merch
-  </h2>
-  <figure>
-    <p>
-      Team Nigma Jersey
-    </p>
-    <img src="https://teamnigma.com/wp-content/uploads/2020/05/Nigma-Jersey-600x825.jpg" width="150" height="200" />
-    <img src="https://teamnigma.com/wp-content/uploads/2020/05/Team-Nigma-Jersey-Back-300x300.jpg" width="200" height='200' />
-    <button>
-      Add to Cart
-    </button>
-   <p>
-     Team Nigma Zip Up Hoodie
-    </p>
-    <img src="https://teamnigma.com/wp-content/uploads/2020/06/Nigma-Zip-up-Hoodie-600x825.jpg" width="150" height="200" />
-    <button>
-      Add to Cart
-    </button>
-  </figure>
- </div>
+<body>
+        <header class="header">
+            <div class="container menu">
+                    <div class="logo">
+                        <img src="https://i.pinimg.com/originals/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.png" alt="">
+                    </div>
+                    <div class="nav">
+                        <div class="nav_search">
+                            <input class="search"  type="text"  placeholder="поиск по сайту">
+                            <button class="btn">найти</button>
+                            <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png" alt="" class="profile">
+                        </div>
+                        <div class="nav_kat">
+                            <ul class="nav_ul list-reset">
+                                <li><a href="" class="nav_link">главная</a></li>
+                                <li><a href="" class="nav_link">каталог</a></li>
+                                <li><a href="" class="nav_link">гарантии</a></li>
+                                <li><a href="" class="nav_link">контакты</a></li>
+                            </ul>
+                            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="" class="ul_img">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" class="ul_img">
+                        </div>
+                    </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container color">                   
+                    <div class="main_items">
+                        <div class="main_item1">
+                            <p class="item_text">Пока герои Доты спасают мир, мы добываем лучшие сеты из  новейшей коллекции Aghanim's Labyrinth Edition </p>
+                            <img class="item_img" src="https://content2.flowwow-images.com/images/app/range_types/potted.png" alt="">    
+                        </div>
+                        <div class="main_item1">
+                            <img class="item_img" src="https://content3.flowwow-images.com/images/app/range_types/plant_pots.png" alt="">
+                            <p class="item_text2">Новый Collector`s Cache уже в продаже!</p>  
+                        </div>
+                    </div>
+                    <div class="strelka">
+                        <img src="https://cdn-icons-png.flaticon.com/128/860/860790.png" alt="">
+                        <img src="https://cdn-icons-png.flaticon.com/512/709/709586.png" alt="">
+                    </div>
+            </div>
+            <section class="goods">
+            <div class="container category">
+                    <aside class="sidebar">
+                        <div class="choice">
+                            <h3>категории</h3>
+                            <ul class="choice_ul">
+                                <li>International 2017</li>
+                                <li>International 2018</li>
+                                <li>International 2019</li>
+                                <li>International 2020</li>
+                            </ul>
+                        </div>
+                        <div class="choice">
+                            <h3>сортировка</h3>
+                            <ul class="choice_ul ">
+                                <li>Качество</li>
+                                <li>Цена</li>
+                                <li>Герой</li>
+                            </ul>
+                        </div>
+                    </aside>
+                    <div class="products">
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/197/19776m.jpg?17" alt="">
+                            <p class="name">Wrath of the Celestial Sentinel</p>
+                            <p class="prise">1300р</p>
+                            <button class="button">купить</button>
+                        </div>
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/1/141m.jpg?17" alt="">
+                            <p class="name">Submerged Hazard</p>
+                            <p class="prise">4890р</p>
+                            <button class="button">купить</button>
+                        </div>
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/83/8383m.jpg?17" alt="">
+                            <p class="name">Claszureme Incursion</p>
+                            <p class="prise">2600р</p>
+                            <button class="button">купить</button>
+                        </div>
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/83/8391m.jpg?17" alt="">
+                            <p class="name">Radiant Conqueror</p>
+                            <p class="prise">3500р</p>
+                            <button class="button">купить</button>
+                        </div>
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/3/315m.jpg?17" alt="">
+                            <p class="name">Legends of Darkheart Pursuit</p>
+                            <p class="prise">4500р</p>
+                            <button class="button">купить</button>
+                        </div>
+
+                        <div class="product_item">
+                            <img src="https://arcanashop.ru/_sh/6/625m.jpg?17" alt="">
+                            <p class="name">Gothic Whisper</p>
+                            <p class="prise">3000р</p>
+                            <button class="button">купить</button>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section class="delivery">
+            <div class="container delivery">
+                <h3>Способы оплаты</h3>
+                <div class="del_types">
+                    <div class="type">
+                        <h4>Банковские карты</h4>
+                        <p>Мы принимаем Visa и Mastercard</p>
+                    </div>
+                    <div class="type">
+                        <h4>Интернет-кошельки</h4>
+                        <p>Мы принимаем Qiwi, yandex.money, paypal, webmoney </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>       
+        <footer class="footer">
+            <div class="container footer">
+                <h3>Вопросы и ответы</h3>
+                <div class="foo_items">
+                    <div class="foo_item">
+                        <p>
+                            Как быстро я получу предметы?	: <br>
+                            <br>
+                            <a href="">Коллекционные предметы отправляются только подарком. Чтобы получить предметы нужно быть в друзьях у менеджера 30 дней, это правило для коллекционных предметов в Dota 2. Поэтому мы подбираем для вас менеджеров, у которых есть много предметов! Вы просто ждете 1 раз 30 дней, а дальше берете все, что вам нужно и получаете быстро (скорость отправки зависит от наличия предметов в инвентаре менеджера и от очереди на отправку). <br></a>
+                            <br>
+                            Как сделать возврат?: <br>
+                            <br>
+                            Для возврата напишите в службу поддержки и укажите ваш номер заказа.
+                        </p>
+                    </div>
+                    <div class="foo_item">
+                        <p>
+                          ВНИМАНИЕ! ОСТЕРЕГАЙТЕСЬ МОШЕННИКОВ!   
+Если вам что-то предлагают под предлогом менеджера:
+
+Каждый заказ имеет уникальный код-пароль (Никому не говорите свой код-пароль).
+Код-пароль служит для проверки менеджера. Если менеджер не может назвать код-пароль к вашему заказу, чтобы вы его сверили, то значит это мошенник.
+Менеджер только отправляет предметы, во всех остальных случаях это мошенник.
+Никому не передавайте свои предметы, пароли и не переходите по ссылкам.
+                        </p>
+                    </div>
+                    <div class="foo_item foo_item_three">
+                        <p>
+                            почта: <br>
+                            <br>
+                            <a href="">
+                               arcanamarket@gmail.com
+                                </a> <br>
+                            <br>
+                            ищите нас в соц.сетях:
+                        </p>
+                        <div class="foo_img">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077042.png" alt="">
+                            <img src="https://img-premium.flaticon.com/png/128/1236/premium/1236871.png?token=exp=1633527475~hmac=97aea43cda658bce1b95e4368c9ee59e" alt="">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111392.png" alt="">
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
